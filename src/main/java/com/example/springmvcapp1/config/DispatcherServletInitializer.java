@@ -1,5 +1,6 @@
-package config;
+package com.example.springmvcapp1.config;
 
+import org.springframework.lang.NonNull;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class DispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -9,11 +10,13 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
     }
 
     @Override
+    @NonNull
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] {ProjectConfig.class};
     }
 
     @Override
+    @NonNull
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }

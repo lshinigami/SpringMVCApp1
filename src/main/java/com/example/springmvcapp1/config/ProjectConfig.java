@@ -1,4 +1,4 @@
-package config;
+package com.example.springmvcapp1.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -13,13 +13,13 @@ import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("com.example.springmvcapp1")
+@ComponentScan(basePackages = "com.example.springmvcapp1.controllers")
 @EnableWebMvc
 public class ProjectConfig implements WebMvcConfigurer {
     private final ApplicationContext applicationContext;
 
     @Autowired
-    public ProjectConfig( ApplicationContext applicationContext) {
+    public ProjectConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
@@ -27,7 +27,7 @@ public class ProjectConfig implements WebMvcConfigurer {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/templates/");
+        templateResolver.setPrefix("classpath:/templates/");
         templateResolver.setSuffix(".html");
         return templateResolver;
     }

@@ -1,4 +1,4 @@
-package controllers;
+package com.example.springmvcapp1.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,6 @@ public class ExitController {
 
     @GetMapping("/exit")
     public String exit() {
-        return "static/exit";
+        return "exit";
     }
 }
