@@ -10,13 +10,11 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
     }
 
     @Override
-    @NonNull
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] {ProjectConfig.class};
     }
 
     @Override
-    @NonNull
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }
